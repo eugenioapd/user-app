@@ -10,11 +10,11 @@ import {Router} from "@angular/router";
 })
 export class UserService {
 
-  private UrlEndPoint: string = 'http://localhost:9095/api/user/getUsers';
-  private UrlEndPointSave: string = 'http://localhost:9095/api/user/newUser';
-  private UrlEndPointDelete: string = 'http://localhost:9095/api/user/deleteUser';
-  private UrlEndPointUpdate: string = 'http://localhost:9095/api/user/updateUser';
-  private UrlEndPointID: string = 'http://localhost:9095/api/user/getUser';
+  private UrlEndPoint: string = 'http://172.104.192.183:9093/api/user/getUsers';
+  private UrlEndPointSave: string = 'http://172.104.192.183:9093/api/user/newUser';
+  private UrlEndPointDelete: string = 'http://172.104.192.183:9093/api/user/deleteUser';
+  private UrlEndPointUpdate: string = 'http://172.104.192.183:9093/api/user/updateUser';
+  private UrlEndPointID: string = 'http://172.104.192.183:9093/api/user/getUser';
   private httpHeaders = new HttpHeaders({'content-Type': 'application/json'})
   constructor(private http: HttpClient, private  router: Router) { }
 
