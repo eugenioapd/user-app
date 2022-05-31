@@ -1,0 +1,41 @@
+<div class="card border-success mb-3">
+  <div class="card-header">Usuarios</div>
+  <div class="card-body text-dark">
+    <h5 class="card-title">Listado de Usuarios</h5>
+
+    <div class="my-2 text-left">
+      <button class="btn btn-rounded btn-success" type="button" [routerLink]="['/users/form']">Crear Usuario</button>
+    </div>
+
+    <div *ngIf="users?.length == 0" class="alert alert-info">
+      No hay registros en la base de datos !!!
+    </div>
+
+    <table class="table table-bordered table-striped" *ngIf="users?.length>0">
+      <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Usuario</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Edital</th>
+        <th scope="col">Eliminar</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let u of users">
+        <td>{{u.id}}</td>
+        <td>{{u.name}}</td>
+        <td>{{u.phone}}</td>
+          <td>
+            <button type="button" name="editar" [routerLink]="['/users/form', u.id]" class="btn btn-success btn-sm">Editar</button>
+          </td>
+          <td>
+            <button type="button" name="eliminar" (click)="delete(u)" class="btn btn-danger btn-sm">Eliminar</button>
+          </td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
